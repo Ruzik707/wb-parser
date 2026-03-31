@@ -1,22 +1,26 @@
-# WB Parser - Парсер данных Wildberries
+# Wildberries Price & Review Parser
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4.9-green)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-## 📌 Описание
-Инструмент для автоматического сбора и анализа цен конкурентов на Wildberries. 
-Экономит 2+ часа ручной работы в день.
+Парсер цен, отзывов WB. Идея: Арбитраж — рубли за отзывы > цена товара (profit hack).
 
-## 🛠 Технологии
-- Python 3.9
-- BeautifulSoup4, Requests
-- Pandas, NumPy для анализа
-- Matplotlib для визуализации
+## 🎯 Проблема
+Ручной мониторинг 100+ товаров — утомительно. Выявить арбитраж (reviews cashback > cost).
 
-## 🚀 Установка и запуск
-```bash
-git clone https://github.com/Ruzik707/wb_parser.git
-cd wb_parser
-pip install -r requirements.txt
-python main.py
+## 🚀 Функции
+- Parse: Цены, отзывы, cashback/отзыв.
+- Anomaly detect: Фильтр "cashback > price".
+- Export: Excel/CSV дашборд.
+
+## 📊 Результаты
+- 10k+ товаров parsed.
+- Примеры арбитража: +20–50% profit (2025 data).
+- Автоматизация: Запуск cron, email alerts.
+
+## 🛠 Стек
+- BeautifulSoup/Requests, Pandas.
+- Openpyxl (Excel export).
+
+## 📁 Структура
