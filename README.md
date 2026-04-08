@@ -3,7 +3,6 @@
 **Автоматический поиск арбитражных связок на Wildberries с уведомлениями в Telegram**
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 ---
 
