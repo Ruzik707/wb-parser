@@ -200,7 +200,7 @@ async def main():
     connector = aiohttp.TCPConnector(limit=20)
 
     async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
-        catalog = await get_catalog()
+        catalog = await get_catalog(session)
         urls = await category_urls(catalog)
         urls = urls[:100]
         sent_products = load_sent_products()
@@ -223,3 +223,6 @@ async def main():
     save_excel(new_products)
     print(f'Отправлено {cnt} новых товаров!')
     print(f'Время работы парсинга {(time.time() - start_time) / 60:.2f} минут')
+
+if __name__ == "__main__":
+    asyncio.run(main())
