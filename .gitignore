@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Output files
+*.xlsx
+*.csv
+sent_products.txt
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
