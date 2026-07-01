@@ -1,9 +1,13 @@
 import telebot
 import requests
 import time
+import os
+from dotenv import load_dotenv
 
-token = '7627716304:AAHpUM96Lb4SAwuHdMETS3kqkK6P9Ct3E-A'
-bot = telebot.TeleBot(token)
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+bot = telebot.TeleBot(TOKEN)
 
 def get_wb_search(query):
 
