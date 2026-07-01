@@ -213,7 +213,13 @@ async def main():
         for product in res:
             per = int(product['cashback']) / int(product['price']) * 100
             if per > 50 and str(product['id']) not in sent_products:
-                new_products.append(product)  
+                new_products.append(product)
+                
+    for product in new_products:
+        await send_tg(session, product)
+        sent_products.append(str(product["id"]))
+    
+    save_sent_products(sent_products)
     save_excel(new_products)
     print(f'Отправлено {cnt} новых товаров!')
     print(f'Время работы парсинга {(time.time() - start_time) / 60:.2f} минут')
