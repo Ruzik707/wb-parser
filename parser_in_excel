@@ -5,9 +5,19 @@ from tqdm.asyncio import tqdm_asyncio
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import pandas as pd
 import time
+import os
+from dotenv import load_dotenv
 
-TOKEN = "7761470260:AAE_bfi0WmvxZRzXmEs4fKwm24SU3P7nfCo"
-CHANNEL_ID = "-1002529714637"
+load_dotenv()
+
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID")
+
+if TOKEN is None:
+    raise RuntimeError("TELEGRAM_BOT_TOKEN is not set")
+
+if CHANNEL_ID is None:
+    raise RuntimeError("TELEGRAM_CHANNEL_ID is not set")
 
 def load_sent_products():
     """ Загружает список отправленных товаров """
